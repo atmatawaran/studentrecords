@@ -1,0 +1,12 @@
+{
+    "name": "atmat/studentrecords",
+    "authors": [
+        {
+            "name": "Marion",
+            "email": "atmatawaran@up.edu.ph"
+        }
+    ],
+    "require": {
+        "bcosca/fatfree": "3.7.3"
+    }
+}

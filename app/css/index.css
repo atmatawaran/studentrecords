@@ -1,0 +1,25 @@
+.student_table{
+  padding: 100px;
+}
+
+.new_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* .dropdown{
+  height: 18vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+} */
+
+.settings{
+  align-self: center;
+}
