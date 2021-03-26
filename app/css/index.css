@@ -23,3 +23,12 @@ main {
 .settings{
   align-self: center;
 }
+
+.openModal{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.credentials{
+  background-color: #F0F8FF;
+}

@@ -30,7 +30,7 @@ class UserController extends Controller{
                     if(password_verify($password, $admin->admin_password)) {
                         $this->f3->set('SESSION.admin_username', $admin->admin_username);
                         // echo "Password matched.";
-                        $this->f3->reroute('/dashboard');
+                        $this->f3->reroute('/courses');
                         
                     } else {
                         // echo "Password did not match.";

@@ -7,6 +7,7 @@
         <th>Units</th>
         <th>Slots</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
 
@@ -20,7 +21,11 @@
           <td><?= ($course['course_max_students']) ?></td>
           <form action="#" method="POST">
             <input type="hidden" name="form" value="add">
-            <td><button type="submit" value="<?= ($course['course_id']) ?>" name="added_course" class="btn-floating"><i class="material-icons">add</i></a></td>
+            <td><button type="submit" value="<?= ($course['course_id']) ?>" name="added_course" class="green btn-floating"><i class="material-icons">edit</i></a></td>
+          </form>
+          <form action="#" method="POST">
+            <input type="hidden" name="form" value="add">
+            <td><button type="submit" value="<?= ($course['course_id']) ?>" name="added_course" class="red btn-floating"><i class="material-icons">delete</i></a></td>
           </form>
         </tr>
       </tbody>

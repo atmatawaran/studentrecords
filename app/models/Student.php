@@ -21,6 +21,11 @@ class Student extends DB\SQL\Mapper{
         return $this->query;
     }
 
+    public function getByStudentNo($student_no){
+        $this->load(array('student_no=?', $student_no));
+        return $this->query;
+    }
+
     public function add(){
         $this->copyFrom('POST'); //f3 will automatically map elements from POST to DB elements basta same key
         $this->save();

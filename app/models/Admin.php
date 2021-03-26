@@ -12,7 +12,7 @@ class Admin extends DB\SQL\Mapper{
     }
 
     public function getByName($username){
-        $this->load(array('username=?', $username));
+        $this->load(array('admin_username=?', $username));
         return $this->query;
     }
 }

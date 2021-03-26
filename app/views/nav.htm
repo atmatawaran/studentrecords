@@ -12,8 +12,6 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Student Records</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/student_list">Student List</a></li>
-        <li><a href="#">Instructor List</a></li>
         <!-- Dropdown Trigger -->
         <a class = "right hide-on-med-and-down dropdown-button" href = "#" data-activates = "dropdown">Settings
           <i class = "mdi-navigation-arrow-drop-down right"></i></a>
