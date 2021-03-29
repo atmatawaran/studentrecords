@@ -35,4 +35,9 @@ class CourseEnrolled extends DB\SQL\Mapper{
         $this->load(array('student_id=? AND course_id=?', $student_id, $course_id));
         $this->erase();
     }
+
+    public function deleteByStudent($student_id){
+        $this->load(array('student_id=?', $student_id));
+        $this->erase();
+    }
 }

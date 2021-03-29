@@ -18,6 +18,7 @@ class MainController extends Controller {
         // check student's status: enrolled or not
         if($stud->student_status == "enrolled"){
             $this->f3->set('status', "hidden");
+            $this->f3->set('unenroll_status', "");
             $this->f3->set('title', "My Enrolled Courses:");
 
             $courses_enrolled = new CourseEnrolled($this->db);
@@ -40,6 +41,7 @@ class MainController extends Controller {
         }
         else{ //cart
             $this->f3->set('status',"");
+            $this->f3->set('unenroll_status', "hidden");
             $this->f3->set('title', "My Cart:");
 
             // student's courses in cart; only pair of ids not objects
@@ -128,7 +130,12 @@ class MainController extends Controller {
                     echo "<script>console.log('Enrolling.....');</script>";
                     $this->enrollCourses();
                     break; // "enroll" break
-            }
+
+                case "unenroll":
+                    echo "<script>console.log('Unenrolling.....');</script>";
+                    $this->unenrollCourses();
+                    break;
+            }   
         }
 
         $this->render();
@@ -155,18 +162,18 @@ class MainController extends Controller {
             $course_to_enroll->reset();
         }
 
+        // delete all courses in cart by student
+        $to_delete=new CourseInCart($this->db);
+        foreach($courses_in_cart as $co){
+            $to_delete->deleteByStudent($stud->student_id);
+        }
+
         // update student status
         $stud->student_status = "enrolled";
         $stud->save();
 
-        // delete all courses in cart by student
-        $to_delete=new CourseInCart($this->db);
-        foreach($to_delete as $to){
-            $to_delete->deleteByStudent($stud->student_id);
-        }
-
         $this->reduceSlotsEnrolled($courses_in_cart);
-
+        
     }
 
     function reduceSlotsEnrolled($courses_in_cart){
@@ -180,6 +187,53 @@ class MainController extends Controller {
             $course->course_max_students--;
             $course->save();
             $course->reset();
+        }
+    }
+
+    function unenrollCourses(){
+        $stud = new Student($this->db);
+        $stud->getById($this->f3->get('SESSION.student_id'));
+
+        $courses_enrolled = new CourseEnrolled($this->db);
+        $courses_enrolled = $courses_enrolled->getByStudent($stud->student_id);
+        
+        // ibalik sa course cart
+        foreach($courses_enrolled as $co){
+            $new_course = new CourseInCart($this->db);
+            $new_course->student_id = $stud->student_id;
+            $new_course->course_id = $co->course_id;
+            $new_course->save();
+        }
+
+        // delete sa student_course_enrolled
+        $to_delete = new CourseEnrolled($this->db);
+        foreach($courses_enrolled as $co){
+            $to_delete->deleteByStudent($stud->student_id);
+        }
+
+        // update student status
+        $stud->student_status = "not_enrolled";
+        $stud->save();
+
+        $this->bringbackSlots($courses_enrolled);
+    }
+
+    function bringbackSlots($courses_enrolled){
+        // ibalik yung slots sa courses
+        $course = new Course($this->db);
+        $final_enrolled = array();
+
+        foreach($courses_enrolled as $c){
+            $course->getById($c->course_id);
+            array_push($final_enrolled, clone $course);
+        }
+                    
+        $to_add = new Course($this->db);
+        foreach($final_enrolled as $final){
+            $to_add->getById($final->course_id);
+            $to_add->course_max_students++;
+            $to_add->save();
+            echo "<script>console.log('Matched! ID = " . $to_add->course_id . "');</script>";
         }
     }
 

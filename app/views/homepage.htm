@@ -80,6 +80,11 @@
               </button>
             </form>
 
+            <form {{ @unenroll_status }} action="/" method="POST">
+              <input type="hidden" name="form" value="unenroll">
+              <button class="btn waves-effect red waves-light" type="submit" name="action">Unenroll</button>
+            </form>
+
         </div>
       </div>
     </div>

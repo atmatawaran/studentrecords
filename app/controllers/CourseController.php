@@ -48,6 +48,12 @@ class CourseController extends Controller {
                 case "edit":
 
                     echo "<script>console.log('Editing course...' );</script>";
+                    echo "<script>console.log('To edit: " . $this->f3->get('POST.to_edit_course') . "' );</script>";
+                    
+                    $course = new Course($this->db);
+                    $course->getById($this->f3->get('POST.to_edit_course'));
+
+                    $this->f3->set('target_edit', $course);
                     
                     break; // "edit" break
             }
