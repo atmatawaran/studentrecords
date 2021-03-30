@@ -49,11 +49,27 @@ class StudentController extends Controller {
 
                 case "edit":
 
-                    echo "<script>console.log('Editing student...' );</script>";
+                    echo "<script>console.log('New Info: " . $this->f3->get('PARAMS.id') . "' );</script>";
+                    
+                    $student = new Student($this->db);
+                    $student->edit($this->f3->get('PARAMS.id'));
+
                     break; // "edit" break
             }
         }
 
         $this->render();
+    }
+
+    function renderUpdate(){
+        $id = $this->f3->get('PARAMS.id');
+
+        $student = new Student($this->db);
+        $student->getById($id);
+        $student->copyTo('POST');
+
+		$this->f3->set('view','student_update.htm');
+		$template=new Template;
+        echo $template->render('layout_admin.htm');
     }
 }

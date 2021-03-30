@@ -95,10 +95,7 @@
             <td><?= ($stud['student_lname']) ?>, <?= ($stud['student_fname']) ?> <?= ($stud['student_mname']) ?></td>
             <td><?= ($stud['student_degree_program']) ?></td>
             <td><?= ($stud['student_college']) ?></td>
-            <form action="/students" method="POST">
-                <input type="hidden" name="form" value="edit">
-                <td><button type="submit" value="<?= ($stud['student_id']) ?>" name="to_edit_student" class="blue btn-floating"><i class="material-icons">edit</i></a></td>
-            </form>
+            <td><button class="blue btn-floating" type="submit" onclick="window.location.href='/students/<?= ($stud['student_id']) ?>';" name="to_edit_course"><i class="material-icons">edit</i></button></td>
             <form action="/students" method="POST">
                 <input type="hidden" name="form" value="delete">
                 <td><button type="submit" value="<?= ($stud['student_id']) ?>" name="to_delete_student" class="red btn-floating"><i class="material-icons">delete</i></a></td>

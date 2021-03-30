@@ -47,13 +47,10 @@ class CourseController extends Controller {
                 
                 case "edit":
 
-                    echo "<script>console.log('Editing course...' );</script>";
-                    echo "<script>console.log('To edit: " . $this->f3->get('POST.to_edit_course') . "' );</script>";
+                    echo "<script>console.log('New Info: " . $this->f3->get('PARAMS.id') . "' );</script>";
                     
                     $course = new Course($this->db);
-                    $course->getById($this->f3->get('POST.to_edit_course'));
-
-                    $this->f3->set('target_edit', $course);
+                    $course->edit($this->f3->get('PARAMS.id'));
                     
                     break; // "edit" break
             }
@@ -61,4 +58,17 @@ class CourseController extends Controller {
 
         $this->render();
     } 
+
+    function renderUpdate(){
+        $id = $this->f3->get('PARAMS.id');
+
+        $course = new Course($this->db);
+        $course->getById($id);
+        $course->copyTo('POST');
+
+		$this->f3->set('view','course_update.htm');
+		$template=new Template;
+        echo $template->render('layout_admin.htm');
+    }
+
 }

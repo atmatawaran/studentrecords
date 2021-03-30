@@ -106,13 +106,10 @@
           <td>{{ @course.course_title }}</td>
           <td>{{ @course.course_units }}</td>
           <td>{{ @course.course_max_students }}</td>
-          <form action="/courses" method="POST">
-            <input type="hidden" name="form" value="edit">
-            <td><button class="blue btn-floating" type="submit" value="{{ @course.course_id }}" name="to_edit_course"><i class="material-icons">edit</i></button></td>
-          </form>
+          <td><button class="blue btn-floating" type="submit" onclick="window.location.href='/courses/{{ @course.course_id }}';" name="to_edit_course"><i class="material-icons">edit</i></button></td>
           <form action="/courses" method="POST">
             <input type="hidden" name="form" value="delete">
-            <td><button type="submit" value="{{ @course.course_id }}" name="to_delete_course" class="red btn-floating"><i class="material-icons">delete</i></button></td>
+            <td><button class="red btn-floating" type="submit" value="{{ @course.course_id }}" name="to_delete_course"><i class="material-icons">delete</i></button></td>
           </form>
         </tr>
       </tbody>
