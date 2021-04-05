@@ -20,4 +20,5 @@
             </div>
 
             <input type="hidden" name="form" value="edit">
-            <button class="course_update btn waves-effect waves-light" type="submit">Update</button>
+            <button class="course_update course_updatebtn btn waves-effect waves-light" type="submit">Update</button>
+        </form>

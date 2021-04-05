@@ -85,7 +85,7 @@
       })
   </script>
 
-<table class="student_table highlight centered">
+<table class="highlight centered">
     <thead>
       <tr>
         <th></th>

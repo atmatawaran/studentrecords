@@ -1,5 +1,6 @@
 .student_table{
   padding: 100px;
+  margin-top: 50px;
 }
 
 .new_container {
@@ -32,4 +33,8 @@ main {
 .course_update{
   margin-left: 200px;
   margin-right: 200px;
+}
+
+.course_updatebtn{
+  margin-bottom: 30px;
 }

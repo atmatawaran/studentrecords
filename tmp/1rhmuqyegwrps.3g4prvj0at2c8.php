@@ -22,7 +22,7 @@
                                 <input id="username" name="username" type="text" required="" autofocus="">
                                 <label for="username">Username</label>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s4 passwordfield">
                                 <input id="password" name="password" type="password" required="">
                                 <label for="password">Password</label>
                             </div>

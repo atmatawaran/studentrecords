@@ -55,6 +55,8 @@ class CourseController extends Controller {
                     
                     $course = new Course($this->db);
                     $course->edit($this->f3->get('PARAMS.id'));
+
+                    $this->f3->reroute('/courses');
                     
                     break; // "edit" break
             }
@@ -64,6 +66,9 @@ class CourseController extends Controller {
     } 
 
     function renderUpdate(){
+        // restrict this page to admin only
+        if($this->f3->get('SESSION.student_id') != null) $this->f3->reroute('/');
+
         $id = $this->f3->get('PARAMS.id');
 
         $course = new Course($this->db);

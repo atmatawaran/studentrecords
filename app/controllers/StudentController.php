@@ -58,6 +58,8 @@ class StudentController extends Controller {
                     $student = new Student($this->db);
                     $student->edit($this->f3->get('PARAMS.id'));
 
+                    $this->f3->reroute('/students');
+
                     break; // "edit" break
             }
         }
@@ -66,6 +68,10 @@ class StudentController extends Controller {
     }
 
     function renderUpdate(){
+
+        // restrict this page to admin only
+        if($this->f3->get('SESSION.student_id') != null) $this->f3->reroute('/');
+
         $id = $this->f3->get('PARAMS.id');
 
         $student = new Student($this->db);

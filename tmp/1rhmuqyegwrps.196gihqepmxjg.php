@@ -35,9 +35,9 @@
   <div class="col s4 pull-s8">
 
     <div class="row">
-      <div class="card blue-text text-darken-2">
-        <div class="card-content blue-text">
-          <span class="card-title"> <?= ($current_user['student_lname']) ?>, <?= ($current_user['student_fname']) ?> <?= ($current_user['student_mname']) ?></span>
+      <div class="card black-text text-darken-2">
+        <div class="card-content black-text">
+          <span class="card-title"><b><?= ($current_user['student_lname']) ?>, <?= ($current_user['student_fname']) ?> <?= ($current_user['student_mname']) ?></b></span>
           <p>Student No: <?= ($current_user['student_no']) ?></p>
           <p>Degree Program: <?= ($current_user['student_degree_program']) ?></p>
           <p>Allowable load: <?= ($current_user['student_max_units']) ?></p>
