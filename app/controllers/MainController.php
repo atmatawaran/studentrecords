@@ -3,6 +3,10 @@
 class MainController extends Controller {
 
     function render(){
+
+        // restrict this page to student only
+        if($this->f3->get('SESSION.admin_username') != null) $this->f3->reroute('/courses');
+
         echo "<script>console.log('SESSION.student_username: " . $this->f3->get('SESSION.student_username') . "' );</script>";
 
         // list of all courses in DB

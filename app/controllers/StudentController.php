@@ -3,6 +3,10 @@
 class StudentController extends Controller {
 
     function render(){
+
+        // restrict this page to admin only
+        if($this->f3->get('SESSION.student_username') != null) $this->f3->reroute('/');
+
         $students = new Student($this->db);
         $this->f3->set('students', $students->all());
 

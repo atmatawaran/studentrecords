@@ -3,6 +3,10 @@
 class CourseController extends Controller {
 
     function render(){
+
+        // restrict this page to admin only
+        if($this->f3->get('SESSION.student_id') != null) $this->f3->reroute('/');
+
         $courses = new Course($this->db);
         $this->f3->set('courses', $courses->all());
 

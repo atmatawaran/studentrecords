@@ -2,6 +2,9 @@
 
 class UserController extends Controller{
     function render(){
+        // make sure session is clear before starting
+        $this->f3->clear('SESSION');
+
         $template = new Template;
         echo $template->render('login.htm');
     }

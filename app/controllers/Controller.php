@@ -7,7 +7,7 @@ class Controller {
 
     //session management
     function beforeroute(){
-        if($this->f3->get('SESSION.student_username') === null){
+        if($this->f3->get('SESSION.student_username') == null && $this->f3->get('SESSION.admin_username') == null){
             $this->f3->reroute('/login');
             exit; // like break
         }
