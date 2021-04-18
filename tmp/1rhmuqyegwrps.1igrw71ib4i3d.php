@@ -10,7 +10,7 @@
        
        <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo navtitle">Student Records</a>
+          <a href="/courses" class="brand-logo navtitle"><i class="large material-icons">local_library</i>Student Enrollment System</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="/courses">Courses</a></li>
             <li><a href="/students">Students</a></li>

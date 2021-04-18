@@ -1,8 +1,10 @@
     <!-- Modal Trigger -->
-  <center>
-      <a class="openModal waves-effect waves-light btn green darken-1 modal-trigger" href="#add-modal">Add New Course</a>
-  </center>
-      
+
+    <div class="row">
+      <div class="col s3"> <h4 id="table_title_admin"><b>List of Courses</b></h4> </div>
+      <div class="col s4 courses_btn"> <a class="openModal waves-effect waves-light darken-1 modal-trigger" href="#add-modal">Add New Course</a> </div>
+    </div>
+
   <!-- Modal Structure -->
   <div id="add-modal" class="modal">
       <div class="modal-content">

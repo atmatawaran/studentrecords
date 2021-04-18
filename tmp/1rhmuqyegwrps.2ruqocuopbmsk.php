@@ -10,7 +10,7 @@
    
    <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo navtitle">Student Records</a>
+      <a href="/" class="brand-logo navtitle"><i class="large material-icons">local_library</i>Student Enrollment System</a>
       <ul class="right hide-on-med-and-down">
         <!-- Dropdown Trigger -->
         <a class = "right hide-on-med-and-down dropdown-button" href = "#" data-activates = "dropdown">Settings

@@ -1,6 +1,16 @@
+.nav-wrapper{
+  background-color: #800000;
+}
+
 .student_table{
   padding: 100px;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#table_title{
+  padding-left: 20px;
+  color:#800000;
 }
 
 .new_container {
@@ -21,6 +31,7 @@ main {
   align-self: center;
 }
 
+
 .openModal{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -37,4 +48,46 @@ main {
 
 .course_updatebtn{
   margin-bottom: 30px;
+}
+
+.homepage{
+  margin: 20px;
+}
+
+.student-card{
+  padding: 10px;
+}
+
+.page-footer{
+  background-color: #800000;
+}
+
+.enrollbtn{
+  background-color: #800000;
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+}
+
+.enrollbtn:hover{
+  background-color: palevioletred;
+}
+
+.unenrollbtn{
+  background-color: black;
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+}
+
+.unenrollbtn:hover{
+  background-color: gray;
+}
+
+.courses_admin{
+  width: 40%;
+}
+
+.courses_btn{
+  margin-top: 15px;
 }
