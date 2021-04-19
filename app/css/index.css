@@ -24,7 +24,7 @@ main {
 }
 
 .navtitle{
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .settings{
@@ -44,10 +44,32 @@ main {
 .course_update{
   margin-left: 200px;
   margin-right: 200px;
+  margin-bottom: 30px;
+}
+
+.course_update_row{
+  margin-left: 190px;
+  margin-right: 200px;
+  margin-bottom: 30px;
+}
+
+.course_update_title{
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  color:#800000;
 }
 
 .course_updatebtn{
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  background-color: #800000;
+  height: 50px;
+  width: 150px;
+  margin-left: 73%;
+}
+
+.course_updatebtn:hover{
+  background-color: #6d4e4e;
 }
 
 .homepage{
@@ -90,4 +112,38 @@ main {
 
 .courses_btn{
   margin-top: 15px;
+}
+
+.courses_table{
+  width: 97%;
+  margin: 30px;
+}
+
+.courses_table_title{
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+#courses_table_add{
+  color: #800000;
+  text-decoration: underline;
+}
+
+/* add course modal */
+
+#add_course_btn{
+  background-color: #800000;
+  float: right;
+  width: 120px;
+  height: 50px;
+  margin-bottom: 25px;
+  margin-right: 35px;
+}
+
+.add_course_form{
+  margin-top: 30px;
+}
+
+.update_course_form{
+  margin-top: 50px;
 }

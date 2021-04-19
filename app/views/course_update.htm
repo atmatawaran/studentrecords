@@ -1,6 +1,6 @@
-<h4 class="course_update">Edit Course Information</h4>
+<h5 class="course_update course_update_title"><b>Edit Course Information</b></h5>
     
-        <form method="POST" action="{{ @BASE }}{{ @PARAMS.1 }}">
+        <form class="update_course_form" method="POST" action="{{ @BASE }}{{ @PARAMS.1 }}">
             <div class="input-field col s6 course_update"> 
               <input id="course_code" name="course_code" type="text" class="validate" value="{{ isset(@POST.course_code)?htmlspecialchars(@POST.course_code):'' }}" required>
               <label for="course_code">Course Code</label>
@@ -20,5 +20,5 @@
             </div>
 
             <input type="hidden" name="form" value="edit">
-            <button class="course_update course_updatebtn btn waves-effect waves-light" type="submit">Update</button>
+            <button class="course_update course_updatebtn btn" type="submit">Save Changes</button>
         </form>

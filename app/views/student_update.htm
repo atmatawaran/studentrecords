@@ -1,6 +1,6 @@
-<h4 class="course_update">Edit Student Information</h4>
+<h5 class="course_update course_update_title"><b>Edit Student Information</b></h5>
     
-        <form method="POST" action="{{ @BASE }}{{ @PARAMS.1 }}">
+        <form class="update_course_form" method="POST" action="{{ @BASE }}{{ @PARAMS.1 }}">
             <div class="input-field col s6 course_update">
                 <input id="student_fname" name="student_fname" type="text" class="validate" value="{{ isset(@POST.student_fname)?htmlspecialchars(@POST.student_fname):'' }}" required>
                 <label for="student_fname">First Name</label>
@@ -14,7 +14,7 @@
                   <label for="student_lname">Last Name</label>
                 </div>
 
-                <div class="row course_update">
+                <div class="row course_update_row">
                   <div class="input-field col s6">
                     <input id="student_no" name="student_no" type="text" class="validate" value="{{ isset(@POST.student_no)?htmlspecialchars(@POST.student_no):'' }}" required>
                     <label for="student_no">Student Number (format: 2015-XXXXX)</label>
@@ -25,7 +25,7 @@
                   </div>
                 </div>
 
-                <div class="row course_update">
+                <div class="row course_update_row">
                   <div class="input-field col s6">
                     <input id="student_college" name="student_college" type="text" class="validate" value="{{ isset(@POST.student_college)?htmlspecialchars(@POST.student_college):'' }}" required>
                     <label for="student_college">College (e.g. CAS)</label>
@@ -37,6 +37,6 @@
                 </div>
 
                 <input type="hidden" name="form" value="edit">
-                <button class="course_update course_updatebtn btn waves-effect waves-light" type="submit">Update</button>
+                <button class="course_update course_updatebtn btn" type="submit">Save Changes</button>
 
             </form>

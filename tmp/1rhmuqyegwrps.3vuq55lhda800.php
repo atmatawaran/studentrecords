@@ -1,15 +1,17 @@
     <!-- Modal Trigger -->
-    <center>
-        <a class="openModal waves-effect waves-light btn green darken-1 modal-trigger" href="#demo-modal">Add New Student</a>
-    </center>
-        
+
+    <div class="row courses_table_title">
+      <div class="col s3"> <h4><b>List of Students</b></h4> </div>
+      <div class="col s4 courses_btn"> <a id="courses_table_add" class="openModal waves-effect waves-light darken-1 modal-trigger" href="#demo-modal"> + Add New Student</a>  </div>
+    </div>
+
     <!-- Modal Structure -->
     <div id="demo-modal" class="modal">
         <div class="modal-content">
-            <h4>Student Information</h4>
+            <h5><b>Add Student Information</b></h5>
         
             <form method="POST" action="/students">
-                <div class="input-field col s6">
+                <div class="input-field col s6 add_course_form">
                   <input id="student_fname" name="student_fname" type="text" class="validate" required>
                   <label for="student_fname">First Name</label>
                 </div>
@@ -58,12 +60,9 @@
 
             </div>
   
-            <div class="modal-footer">
-              <div class="modal-footer">
-                <input type="hidden" name="form" value="add">
-                <button class="btn waves-effect waves-light" type="submit">Submit</button>
-              </div>
-            </div>
+            <input type="hidden" name="form" value="add">
+            <button id="add_course_btn" class="btn waves-effect waves-light" type="submit">Submit</button>
+
           </form>
         </div>
 
@@ -74,7 +73,7 @@
         })
     </script>
 
-    <table class="highlight centered">
+    <table class="highlight centered courses_table">
         <thead>
         <tr>
             <th></th>

@@ -26,7 +26,7 @@
                                 <input id="password" name="password" type="password" required="">
                                 <label for="password">Password</label>
                             </div>
-                            <button class="btn waves-effect waves-light loginbtn" type="submit" value="student" name="login">Login as student</button>
+                            <button class="btn waves-effect waves-light loginbtn_student" type="submit" value="student" name="login">Login as student</button>
                             <br/>
                             <button class="waves-effect waves-light loginbtn" type="submit" value="admin" name="login">LOGIN AS ADMIN</button>
                         </form>

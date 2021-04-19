@@ -1,12 +1,23 @@
 .loginform{
     width: 320px;
-    margin-top: 120px;
+    margin-top: 110px;
 }
 
 .loginbtn{
     width: 250px;
     height:50px;
     margin-top: 10px;
+}
+
+.loginbtn_student{
+    width: 250px;
+    height:50px;
+    margin-top: 10px;
+    background-color: #800000;
+}
+
+.loginbtn_student:hover{
+    background-color: #801100;
 }
 
 .loginform_actual{
